@@ -1,16 +1,30 @@
 // https://leetcode.com/problems/two-sum/description/
 
-var twoSum = function (nums, target) {
-	let hash = {};
-	for (let i = 0; i < nums.length; i++) {
-		let diff = target - nums[i];
-		if (hash.hasOwnProperty(diff)) {
-			return [hash[diff], i];
-		}
-		hash[nums[i]] = i;
-	}
-};
+// var twoSum = function (nums, target) {
+// 	let hash = {};
+// 	for (let i = 0; i < nums.length; i++) {
+// 		let diff = target - nums[i];
+// 		if (hash.hasOwnProperty(diff)) {
+// 			return [hash[diff], i];
+// 		}
+// 		hash[nums[i]] = i;
+// 	}
+// };
 
+function twoSum(numbers, target) {
+	let numSet = new Map()
+	
+	for(let i=0; i < numbers.length; i++) {
+		// console.log(numSet)
+		let num = numbers[i]
+		let diff = target - num
+		if(numSet.has(diff)) {
+			return [i, numSet.get(diff)]
+		}
+			numSet.set(num, i)
+	}
+	 throw new Error("no pairs found")
+	}
 // Generate a large input array with 10 million elements
 const arr = new Array(10000000).fill().map((_, i) => i);
 

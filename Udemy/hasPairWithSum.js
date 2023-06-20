@@ -21,6 +21,20 @@ const hasPairWithSum = (arr, sum) => {
   return null
 }
 
+function sumPairs(ints, s) {
+  const numSet = new Set()
+  ints.forEah(num => {
+    
+    let num = ints[i]
+    let diff = s - num
+    if(numSet.has(diff)) {
+     return [diff, num]
+    }
+    numSet.add(num)
+  
+  })
+  }
+
 // Test case 1: Array with two elements that add up to the target sum
 console.log(hasPairWithSum([1, 2], 3)); // Expected output: [1, 2]
 
